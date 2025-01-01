@@ -24,7 +24,7 @@ on:
         type: number
         required: false
       message:
-        description: "Additional method"
+        description: "Additional message"
         type: string
         required: false
 
@@ -40,10 +40,10 @@ jobs:
           echo "Test type: ${{ inputs.test-type }}"
           echo "Envirionment: ${{ inputs.environment }}"
           echo "Build number: ${{ inputs.build-number }}"
-          echo "Message: ${{ inputs.message }}
+          echo "Message: ${{ inputs.message }}"
 
       - name: Run tests (if selected)
-        if: ${{ inputs.run-tests == 'true' }}
+        if: ${{ inputs.run-tests }}
         run: echo "Testing........."
         
       # Deploy to the chosen enviornment
